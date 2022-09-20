@@ -1,0 +1,1 @@
+fun power(n, m) = if m > 0 then power(n, m - 1) * n else 1;

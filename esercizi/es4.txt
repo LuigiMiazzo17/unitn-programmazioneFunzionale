@@ -1,0 +1,6 @@
+fun introot m = 
+	let 
+		fun aux(k, m) = if k * k > m then k - 1 else aux(k + 1, m)
+	in
+		aux(0, m)
+end;

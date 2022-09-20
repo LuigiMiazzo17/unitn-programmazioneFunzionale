@@ -1,0 +1,5 @@
+val rec is_bound = fn name => fn Var n => (if (name = n) then true else false)
+				| Lambda (n, e) => if (name = n) then true else (is_bound name 
+e)
+				| Apply (e1, e2) => (is_bound name e1) orelse (is_bound name 
+e2);

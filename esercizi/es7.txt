@@ -1,0 +1,9 @@
+fun minA(n, m) = if n < m then n else m;
+
+fun minB(t:int*int) =
+	let 
+		val (a,b) = t;
+	in
+		if (a < b) then a else b
+end;
+

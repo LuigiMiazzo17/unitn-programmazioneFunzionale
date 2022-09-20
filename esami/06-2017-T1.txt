@@ -1,0 +1,3 @@
+val rec sommali = fn n:int => (fn [] => n
+			| a::[] => n
+			| a::b::c => b + (sommali n c));

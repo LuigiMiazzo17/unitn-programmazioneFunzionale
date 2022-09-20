@@ -1,0 +1,10 @@
+datatype intonil = Nil | Int of int;
+
+type ambiente = string -> intonil;
+
+val ambientevuoto = fn _:string => Nil;
+
+val rec lega = fn a:ambiente => fn n:string => fn i:int => (fn nome => if (n = nome) then 
+(Int i) else (a nome)):ambiente;
+
+

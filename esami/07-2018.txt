@@ -1,0 +1,6 @@
+datatype ITER = Iter of int * (int -> int);
+
+val f = fn x => x * 2;
+
+val rec eval = fn Iter (i, f) => fn x => if (i > 0) then (eval (Iter (i - 1, f))) (f x) else 
+x;  

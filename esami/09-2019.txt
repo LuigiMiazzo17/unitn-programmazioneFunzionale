@@ -1,0 +1,9 @@
+fun f filename =
+    let
+        val file = TextIO.openIn filename
+        val str = TextIO.inputAll file
+    in
+        TextIO.closeIn file;
+        List.filter (fn c => c <> #" " andalso c <> #"\t" andalso c <> #"\n") (explode str)
+    end;
+    f "text.txt";

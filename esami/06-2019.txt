@@ -1,0 +1,2 @@
+val rec f = fn [] => []
+	| a::b => if (a >= 0) then ((a*a)-1)::(f b) else ((a*a) + 1)::(f b);

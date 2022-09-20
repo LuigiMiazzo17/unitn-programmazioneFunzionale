@@ -1,0 +1,7 @@
+datatype FOR = For of int * (int -> int);
+
+val f = fn x => x * 2;
+
+val rec eval = fn (For (i, f)) => fn x => if (i > 0) then (eval( For (i - 1, f)) (f x)) else 
+x;
+

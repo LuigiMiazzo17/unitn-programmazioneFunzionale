@@ -1,0 +1,2 @@
+fun f x [] = x::[] | f x (a::b) = if x > a then a::(f x b) else 
+x::(a::b);

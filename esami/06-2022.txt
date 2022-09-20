@@ -1,0 +1,15 @@
+fun f filename =
+    let
+        val file = TextIO.openIn(filename);
+        val lista = explode (TextIO.inputAll file);
+        fun coppie nil = [""]
+          | coppie [_] = [""]
+          | coppie (a::b::[]) = [""]
+          | coppie (a::b::c::[]) = [""]
+          | coppie (a::b::c::d::[]) = implode [c, d] :: [""] 
+          | coppie (a::b::c::d::l) = (implode [c, d]) :: coppie l;
+    in
+        TextIO.closeIn file;
+        coppie lista
+    end;
+f "test.txt";

@@ -1,0 +1,21 @@
+ datatype espressione = costante of int
+                         | variabile of string
+                         | somma of espressione * espressione
+                         | sottrazione of espressione * espressione
+                         | prodotto of espressione * espressione
+                         | divisione of espressione * espressione
+                         | var of string * espressione * espressione;
+
+
+local
+        val rec cerca = fn s => fn [] => 0
+                    | (s1, v)::l => if s1 = s then v else cerca s l
+    in
+        val rec eval = fn env => fn costante n => n
+                                    | variabile s => cerca s env
+                                    | somma (a1, a2) => (eval env a1) + (eval env a2)
+                                    | sottrazione (a1, a2) => (eval env a1) - (eval env a2)
+                                    | prodotto (a1, a2) => (eval env a1) * (eval env a2)
+                                    | divisione (a1, a2) => (eval env a1) div (eval env a2)
+                                    | var (v, e1, e2) => eval ((v, eval env e1)::env) e2
+    end;

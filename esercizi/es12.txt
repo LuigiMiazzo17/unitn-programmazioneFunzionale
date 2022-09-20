@@ -1,0 +1,4 @@
+fun isUguale [] [] = true
+| isUguale (a::b) (c::d) = if (a = c) then isUguale b d else false
+| isUguale a [] = false
+| isUguale [] a = false;

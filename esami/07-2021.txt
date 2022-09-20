@@ -1,0 +1,4 @@
+val rec conta = fn [] => 0
+		| a::[] => 1
+		| a::b => if (List.exists (fn y => a = y) b) then (conta b) else 1+(conta 
+b);

@@ -1,0 +1,4 @@
+val rec noduplen = fn [] => 0
+                       | a::[] => 1
+                       | a::b => if (List.exists ((fn y => a = y)) b) then 0+(noduplen b) else 
+1+(noduplen b); 

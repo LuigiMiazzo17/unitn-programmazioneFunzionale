@@ -1,0 +1,3 @@
+val rec prod = fn n => fn m => if (n <= m) then n * (prod (n + 1) m) else 1; 
+
+val rec comb = fn n => fn k => (prod (n - k + 1) n) div (prod 1 k);

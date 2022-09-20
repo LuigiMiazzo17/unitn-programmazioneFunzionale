@@ -1,0 +1,4 @@
+fun sommali a [] = a
+| sommali a (b::[]) = a
+| sommali a (b::c::[]) = a
+| sommali a (b::c::d::e) = d + (sommali a e); 

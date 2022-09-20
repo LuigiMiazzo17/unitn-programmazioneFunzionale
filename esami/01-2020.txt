@@ -1,0 +1,12 @@
+fun f filename =
+    let
+        val file = TextIO.openIn filename
+        val str = TextIO.inputAll file
+        val rec elem_pari = fn [] => []
+                             | a::[] => []
+                             | a::b::c => Char.toString(b)::(elem_pari c)
+    in
+        TextIO.closeIn file;
+        elem_pari (explode str)
+    end;
+f "text2.txt";
