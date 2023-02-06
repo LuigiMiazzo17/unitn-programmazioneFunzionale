@@ -1,3 +1,1 @@
-# programmazioneFunzionale
-
-This is Miazzo Luigi's repository for the course of Functional Programming @ uniTN.
+This is Miazzo Luigi's repository for the course of "Programmazione Funzionale" @ uniTN, Prof. Kuper M. Gabriel.
